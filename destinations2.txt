@@ -1,0 +1,28 @@
+Hawaii,1500,warm,beach hiking surfing
+Switzerland,2000,cold,skiing hiking sightseeing
+Paris,1800,moderate,sightseeing museums dining
+Thailand,1200,warm,beach nightlife temples
+Japan,2200,moderate,sightseeing temples shopping
+Iceland,2500,cold,sightseeing hiking geysers
+Australia,3000,warm,beach sightseeing surfing
+United States,2500,moderate,sightseeing shopping dining
+Brazil,1700,warm,beach hiking nightlife
+Canada,1800,cold,skiing hiking sightseeing
+Italy,2000,moderate,sightseeing museums dining
+Greece,1600,warm,beach historical sightseeing
+Morocco,1400,warm,desert hiking historical
+South Africa,2200,warm,safari sightseeing hiking
+Norway,2300,cold,skiing fjords hiking
+Spain,1800,moderate,beach sightseeing dining
+Dubai,2800,warm,shopping sightseeing beach
+China,2100,moderate,temples sightseeing shopping
+Mexico,1300,warm,beach nightlife historical
+New Zealand,2700,moderate,hiking sightseeing adventure
+Austria,1900,cold,skiing sightseeing hiking
+Argentina,1400,moderate,sightseeing hiking nightlife
+Vietnam,1100,warm,beach historical cuisine
+Sweden,2100,cold,skiing hiking northern-lights
+India,1200,moderate,temples historical cuisine
+Egypt,1500,warm,desert historical diving
+Portugal,1700,moderate,beach surfing nightlife
+Croatia,1800,warm,beach historical sailing

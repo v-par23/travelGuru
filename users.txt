@@ -1,0 +1,3 @@
+ved,dip23
+john,1234,Hawaii,United States,Vietnam,Iceland,Iceland,Iceland,Iceland,New Zealand,Dubai,Iceland,Iceland,United States,Norway
+jane,abcd,Paris
