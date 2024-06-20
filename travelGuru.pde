@@ -1,3 +1,4 @@
+import g4p_controls.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Arrays;
@@ -44,6 +45,8 @@ void setup() {
 
   loadDestinations();
   loadUsers();
+  
+  createGUI();
 }
 
 void draw() {
