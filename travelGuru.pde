@@ -79,10 +79,10 @@ void draw() {
     displayUserRecommendations();
     backButton1.setVisible(true);
     backButton2.setVisible(true);
+    addButtonsFalse();
   } else if (!showRecommendations) {
     displayQuestions();
     displayUserProfileIcon();
-    addButtonsTrue();
     backButton1.setVisible(true);
     backButton2.setVisible(false);
     addButtonsFalse();
@@ -96,7 +96,7 @@ void draw() {
     displayRecommendations();
     backButton1.setVisible(true);
     backButton2.setVisible(true);
-    addButtonsFalse();
+    addButtonsTrue();
   }
 }
 
