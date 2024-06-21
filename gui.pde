@@ -37,14 +37,17 @@ public void button2_click1(GButton source, GEvent event) { //_CODE_:backButton2:
 } //_CODE_:backButton2:968307:
 
 public void add1_click1(GButton source, GEvent event) { //_CODE_:add1:342208:
+  addRecommendation(0);
   println("add1 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:add1:342208:
 
 public void add2_click1(GButton source, GEvent event) { //_CODE_:add2:712111:
+  addRecommendation(1);
   println("add2 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:add2:712111:
 
 public void add3_click1(GButton source, GEvent event) { //_CODE_:add3:412807:
+  addRecommendation(2);
   println("add3 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:add3:412807:
 

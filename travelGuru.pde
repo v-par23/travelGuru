@@ -176,7 +176,6 @@ void displayUserRecommendations() {
   textAlign(CENTER, CENTER);
   text("Your Recommended Destinations", width / 2, 50);
   textAlign(LEFT, TOP);
-  addButtonsTrue();
   int yOffset = 100;
   for (String rec : currentUser.recommendations) {
     text(rec, 50, yOffset);
@@ -425,6 +424,20 @@ void saveRecommendation(String username, String recommendation) {
     }
   }
 }
+
+void addRecommendation(int index) {   
+  if (index >= 0 && index < recommendedDestinations.size()) {
+    Destination dest = recommendedDestinations.get(index);
+    if (!currentUser.recommendations.contains(dest.name)) {
+      currentUser.recommendations.add(dest.name);
+      saveUsers();
+      println("Added recommendation: " + dest.name + " for user: " + currentUser.username);
+    } else {
+      println("Destination already in recommendations: " + dest.name);
+    }
+  }
+}
+
 
 void addButtonsTrue(){
   add1.setVisible(true);
