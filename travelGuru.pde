@@ -155,6 +155,10 @@ void displayQuestions() {
       text(userInputs[i], 50, 130 + i * 50);
     }
   }
+  if (currentQuestion >= questions.length) {
+    recommendDestination();
+    showRecommendations = true;
+  }
 }
 
 void displayUserProfileIcon() {

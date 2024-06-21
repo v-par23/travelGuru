@@ -13,6 +13,13 @@
  * Do not rename this tab!
  * =========================================================
  */
+void resetQuestions() {
+  for (int i = 0; i < userInputs.length; i++) {
+    userInputs[i] = "";
+  }
+  currentQuestion = 0;
+  showRecommendations = false;
+}
 
 public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButton1:397388:
 
@@ -38,6 +45,7 @@ public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButto
 public void button2_click1(GButton source, GEvent event) { //_CODE_:backButton2:968307:
     if (showRecommendations) {
     showRecommendations = false;
+    resetQuestions();
   } else if (showUserRecommendations) {
     showUserRecommendations = false;
   }
