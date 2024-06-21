@@ -1,4 +1,4 @@
 ved,dip23
-john,1234,Hawaii,United States,Vietnam,Norway,Switzerland,Italy,China,Thailand,India,Mexico,Morocco,Argentina,Iceland,New Zealand,Japan,Egypt,Greece,Portugal,Brazil,Croatia,Paris,Canada,Spain,Austria,Sweden,South Africa,Dubai,Australia
+john,1234,Hawaii,United States,Vietnam,Norway,Switzerland,Italy,China,Thailand,India,Mexico,Morocco,Argentina,Iceland,New Zealand,Japan,Egypt,Greece,Portugal,Brazil,Croatia,Paris,Canada,Spain,Austria,Sweden,South Africa,Dubai,Australia,Malaysia,Sri Lanka,Philippines
 jane,abcd,Paris
 whyrat,kohli,Vietnam,India,Thailand
