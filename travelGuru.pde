@@ -56,10 +56,12 @@ void draw() {
     introScreen();
     backButton1.setVisible(false);
     backButton2.setVisible(false);
+    addButtonsFalse();
   } else if (transitioning) {
     introScreen();
     backButton1.setVisible(false);
     backButton2.setVisible(false);
+    addButtonsFalse();
     fill(0, fadeValue);
     rect(0, 0, width, height);
     fadeValue += transitionSpeed;
@@ -72,6 +74,7 @@ void draw() {
     displayLogin();
     backButton1.setVisible(false);
     backButton2.setVisible(false);
+    addButtonsFalse();
   } else if (showUserRecommendations) {
     displayUserRecommendations();
     backButton1.setVisible(true);
@@ -79,17 +82,21 @@ void draw() {
   } else if (!showRecommendations) {
     displayQuestions();
     displayUserProfileIcon();
+    addButtonsTrue();
     backButton1.setVisible(true);
     backButton2.setVisible(false);
+    addButtonsFalse();
     if (showDropdown) {
       displayDropdownMenu();
       backButton1.setVisible(true);
       backButton2.setVisible(false);
+      addButtonsFalse();
     }
   } else {
     displayRecommendations();
     backButton1.setVisible(true);
     backButton2.setVisible(true);
+    addButtonsFalse();
   }
 }
 
@@ -169,12 +176,13 @@ void displayUserRecommendations() {
   textAlign(CENTER, CENTER);
   text("Your Recommended Destinations", width / 2, 50);
   textAlign(LEFT, TOP);
-  
+  addButtonsTrue();
   int yOffset = 100;
   for (String rec : currentUser.recommendations) {
     text(rec, 50, yOffset);
     yOffset += 40;
   }
+  
 }
 
 void mouseClicked() {
@@ -416,4 +424,16 @@ void saveRecommendation(String username, String recommendation) {
       saveUsers();
     }
   }
+}
+
+void addButtonsTrue(){
+  add1.setVisible(true);
+  add2.setVisible(true);
+  add3.setVisible(true);
+}
+
+void addButtonsFalse(){
+  add1.setVisible(false);
+  add2.setVisible(false);
+  add3.setVisible(false);
 }
