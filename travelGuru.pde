@@ -19,6 +19,7 @@ String usernameInput = "";
 String passwordInput = "";
 String registrationMessage = "";
 int currentQuestion = 0;
+int recommendationsPerRow = 4;  
 boolean showRecommendations = false;
 boolean showDropdown = false;
 boolean showUserRecommendations = false;
@@ -181,10 +182,20 @@ void displayUserRecommendations() {
   text("Your Recommended Destinations", width / 2, 50);
   textAlign(LEFT, TOP);
   int yOffset = 100;
-  for (String rec : currentUser.recommendations) {
-    text(rec, 50, yOffset);
-    yOffset += 40;
+  int xOffset = 50;
+  int spacingX = 250;  // Horizontal spacing between recommendations
+  int spacingY = 40;   // Vertical spacing between rows
+
+  for (int i = 0; i < currentUser.recommendations.size(); i++) {
+    int row = i / recommendationsPerRow;  // Determine the current row
+    int col = i % recommendationsPerRow;  // Determine the current column
+    text(currentUser.recommendations.get(i), xOffset + col * spacingX, yOffset + row * spacingY);
   }
+  //int yOffset = 100;
+  //for (String rec : currentUser.recommendations) {
+  //  text(rec, 50, yOffset);
+  //  yOffset += 40;
+  //}
   
 }
 
