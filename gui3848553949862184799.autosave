@@ -18,19 +18,14 @@ void resetQuestions() {
     userInputs[i] = "";
   }
   currentQuestion = 0;
-  showRecommendations = false;
 }
 
 public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButton1:397388:
-
-  //if (showRecommendations) {
-  //  showRecommendations = false;
-  //} else if (showUserRecommendations) {
-  //  showUserRecommendations = false;
-  //}
-  
-  
-  //if (currentUser == null) {
+ // (showRecommendations) {
+  //s  howRecommendations = false;
+  //else if (showUserRecommendations) {
+  //showUserRecommendations = false;
+  //  //if (currentUser == null) {
   //    introComplete = false; // Navigate back to the intro screen
   //  } else {
   //    currentQuestion--;
@@ -47,7 +42,6 @@ public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButto
 public void button2_click1(GButton source, GEvent event) { //_CODE_:backButton2:968307:
     if (showRecommendations) {
     showRecommendations = false;
-    resetQuestions();
   } else if (showUserRecommendations) {
     showUserRecommendations = false;
   }
