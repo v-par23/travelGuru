@@ -120,10 +120,10 @@ void displayLogin() {
   fill(0);
   textSize(24);
   textAlign(CENTER, CENTER);
-  text("Please log in or register", width / 2, height / 3);
+  text("Please Login or Register", width / 2, height / 3);
   textAlign(LEFT);
-  text("Username:", width / 2 - 115, height / 2 - 20);
-  text("Password:", width / 2 - 115, height / 2 + 20);
+  text("Username:", width / 2 - 125, height / 2 - 20);
+  text("Password:", width / 2 - 125, height / 2 + 20);
   
   // Display username and password input fields
   fill(255);
@@ -138,11 +138,11 @@ void displayLogin() {
   // Display Login and Register buttons
   fill(200);
   rect(width / 2 - 100, height / 2 + 80, 80, 40);
-  rect(width / 2 + 20, height / 2 + 80, 80, 40);
+  rect(width / 2 + 20, height / 2 + 80, 100, 40);
   fill(0);
   textAlign(CENTER, CENTER);
   text("Login", width / 2 - 60, height / 2 + 100);
-  text("Register", width / 2 + 60, height / 2 + 100);
+  text("Register", width / 2 + 70, height / 2 + 100);
 
   // Display registration message
   textSize(18);
