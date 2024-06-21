@@ -95,9 +95,13 @@ void draw() {
     }
   } else {
     displayRecommendations();
+    displayUserProfileIcon();
     backButton1.setVisible(true);
     backButton2.setVisible(true);
     addButtonsTrue();
+      if (showDropdown) {
+        displayDropdownMenu();
+      }
   }
 }
 
