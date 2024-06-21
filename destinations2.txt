@@ -26,3 +26,24 @@ India,1200,moderate,temples historical cuisine
 Egypt,1500,warm,desert historical diving
 Portugal,1700,moderate,beach surfing nightlife
 Croatia,1800,warm,beach historical sailing
+Maldives,3500,warm,beach snorkeling diving
+Peru,1600,moderate,hiking historical sightseeing
+Chile,1900,moderate,hiking sightseeing wine-tasting
+Costa Rica,2000,warm,beach hiking rainforest
+Turkey,1700,moderate,beach historical sightseeing
+Malaysia,1300,warm,beach rainforest diving
+Philippines,1400,warm,beach island-hopping diving
+Ireland,1800,cold,sightseeing hiking pubs
+Scotland,2000,cold,sightseeing hiking whiskey-tasting
+Czech Republic,1500,moderate,sightseeing historical beer-tasting
+Hungary,1600,moderate,sightseeing historical thermal-baths
+Netherlands,1900,cold,sightseeing museums cycling
+Belgium,1700,cold,sightseeing beer chocolate
+Jamaica,2000,warm,beach reggae hiking
+Bahamas,3000,warm,beach snorkeling diving
+Nepal,1400,moderate,hiking temples cultural
+Sri Lanka,1300,warm,beach wildlife temples
+Taiwan,2000,moderate,sightseeing temples hiking
+South Korea,1800,moderate,sightseeing temples cuisine
+China,2100,moderate,temples sightseeing shopping
+Hong Kong,1900,moderate,sightseeing shopping nightlife
