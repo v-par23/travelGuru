@@ -87,10 +87,14 @@ void draw() {
     slider1.setVisible(false);
     addButtonsFalse();
   } else if (!showRecommendations) {
+    fill(0);
+    textSize(20);
+    text("Choose how many number of destinations to be recomended at once", 50, 350);
     displayQuestions();
     displayUserProfileIcon();
     backButton1.setVisible(true);
     backButton2.setVisible(false);
+ 
     slider1.setVisible(true);
     addButtonsFalse();
     if (showDropdown) {
