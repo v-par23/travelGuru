@@ -59,13 +59,13 @@ void draw() {
     backButton1.setVisible(false);
     backButton2.setVisible(false);
     slider1.setVisible(false);
-    addButtonsFalse();
+    desti.setVisible(false);
   } else if (transitioning) {
     introScreen();
     backButton1.setVisible(false);
     backButton2.setVisible(false);
     slider1.setVisible(false);
-    addButtonsFalse();
+    desti.setVisible(false);
     fill(0, fadeValue);
     rect(0, 0, width, height);
     fadeValue += transitionSpeed;
@@ -79,13 +79,13 @@ void draw() {
     backButton1.setVisible(false);
     backButton2.setVisible(false);
     slider1.setVisible(false);
-    addButtonsFalse();
+    desti.setVisible(false);
   } else if (showUserRecommendations) {
     displayUserRecommendations();
     backButton1.setVisible(true);
     backButton2.setVisible(true);
     slider1.setVisible(false);
-    addButtonsFalse();
+    desti.setVisible(false);
   } else if (!showRecommendations) {
     fill(0);
     textSize(20);
@@ -95,7 +95,7 @@ void draw() {
     backButton1.setVisible(true);
     backButton2.setVisible(false);
     slider1.setVisible(true);
-    addButtonsFalse();
+    desti.setVisible(false);
     if (showDropdown) {
       displayDropdownMenu();
       backButton1.setVisible(true);
@@ -104,7 +104,7 @@ void draw() {
       textSize(20);
       text("Choose how many number of destinations to be recomended at once", 50, 350);
       slider1.setVisible(true);
-      addButtonsFalse();
+      desti.setVisible(false);
     }
   } else {
     displayRecommendations();
@@ -112,7 +112,7 @@ void draw() {
     backButton1.setVisible(true);
     backButton2.setVisible(true);
     slider1.setVisible(false);
-    addButtonsTrue();
+    desti.setVisible(true);    
       if (showDropdown) {
         displayDropdownMenu();
       }
@@ -459,16 +459,4 @@ void saveRecommendation(String username, String recommendation) {
       saveUsers();
     }
   }
-}
-
-void addButtonsTrue(){
-  add1.setVisible(true);
-  add2.setVisible(true);
-  add3.setVisible(true);
-}
-
-void addButtonsFalse(){
-  add1.setVisible(false);
-  add2.setVisible(false);
-  add3.setVisible(false);
 }
