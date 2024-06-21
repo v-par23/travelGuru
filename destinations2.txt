@@ -45,5 +45,4 @@ Nepal,1400,moderate,hiking temples cultural
 Sri Lanka,1300,warm,beach wildlife temples
 Taiwan,2000,moderate,sightseeing temples hiking
 South Korea,1800,moderate,sightseeing temples cuisine
-China,2100,moderate,temples sightseeing shopping
 Hong Kong,1900,moderate,sightseeing shopping nightlife
