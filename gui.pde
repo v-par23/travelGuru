@@ -14,13 +14,12 @@
  * =========================================================
  */
 void resetQuestions() {
-  for (int i = 0; i < userInputs.length; i++) {
+  for (int i = 0; i < userInputs.length; i++){
     userInputs[i] = "";
   }
   currentQuestion = 0;
   showRecommendations = false;
 }
-
 public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButton1:397388:
   currentUser = null;
   showRecommendations = false;
@@ -61,6 +60,11 @@ public void add3_click1(GButton source, GEvent event) { //_CODE_:add3:412807:
   println("add3 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:add3:412807:
 
+public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:358523:
+  numDest = slider1.getValueF();
+  println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
+} //_CODE_:slider1:358523:
+
 
 
 // Create all the GUI controls. 
@@ -85,6 +89,11 @@ public void createGUI(){
   add3 = new GButton(this, 1036, 539, 80, 30);
   add3.setText("Add");
   add3.addEventHandler(this, "add3_click1");
+  slider1 = new GSlider(this, 85, 466, 100, 40, 10.0);
+  slider1.setLimits(2.0, 1.0, 5.0);
+  slider1.setNumberFormat(G4P.DECIMAL, 2);
+  slider1.setOpaque(false);
+  slider1.addEventHandler(this, "slider1_change1");
 }
 
 // Variable declarations 
@@ -94,3 +103,4 @@ GButton backButton2;
 GButton add1; 
 GButton add2; 
 GButton add3; 
+GSlider slider1; 
