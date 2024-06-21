@@ -54,8 +54,10 @@ void draw() {
 
   if (!introComplete && !transitioning) {
     introScreen();
+    backButton.setVisible(false);
   } else if (transitioning) {
     introScreen();
+    backButton.setVisible(false);
     fill(0, fadeValue);
     rect(0, 0, width, height);
     fadeValue += transitionSpeed;
@@ -63,18 +65,24 @@ void draw() {
       transitioning = false;
       introComplete = true;
     }
+  
   } else if (currentUser == null) {
     displayLogin();
+    backButton.setVisible(false);
   } else if (showUserRecommendations) {
     displayUserRecommendations();
+    backButton.setVisible(true);
   } else if (!showRecommendations) {
     displayQuestions();
     displayUserProfileIcon();
+    backButton.setVisible(true);
     if (showDropdown) {
       displayDropdownMenu();
+      backButton.setVisible(true);
     }
   } else {
     displayRecommendations();
+    backButton.setVisible(true);
   }
 }
 
