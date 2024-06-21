@@ -191,12 +191,6 @@ void displayUserRecommendations() {
     int col = i % recommendationsPerRow;  // Determine the current column
     text(currentUser.recommendations.get(i), xOffset + col * spacingX, yOffset + row * spacingY);
   }
-  //int yOffset = 100;
-  //for (String rec : currentUser.recommendations) {
-  //  text(rec, 50, yOffset);
-  //  yOffset += 40;
-  //}
-  
 }
 
 void mouseClicked() {
@@ -401,7 +395,6 @@ void recommendDestination() {
   }
 }
 
-
 void addRecommendation(int index) {
   if (index >= 0 && index < recommendedDestinations.size()) {
     Destination destination = recommendedDestinations.get(index);
@@ -449,9 +442,6 @@ void saveRecommendation(String username, String recommendation) {
     }
   }
 }
-
-
-
 
 void addButtonsTrue(){
   add1.setVisible(true);
