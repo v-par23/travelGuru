@@ -22,24 +22,14 @@ void resetQuestions() {
 }
 
 public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButton1:397388:
-
-  //if (showRecommendations) {
-  //  showRecommendations = false;
-  //} else if (showUserRecommendations) {
-  //  showUserRecommendations = false;
-  //}
-  
-  
-  //if (currentUser == null) {
-  //    introComplete = false; // Navigate back to the intro screen
-  //  } else {
-  //    currentQuestion--;
-  //    if (currentQuestion < 0) {
-  //      currentQuestion = questions.length +2;
-  //    }
-  //  }
-
-  //displayQuestions();
+  currentUser = null;
+  showRecommendations = false;
+  showUserRecommendations = false;
+  currentQuestion = 0;
+  Arrays.fill(userInputs, null);
+  usernameInput = "";
+  passwordInput = "";
+  registrationMessage = "";
   println("button1 - GButton >> GEvent." + event + " @ " + millis());
 
 } //_CODE_:backButton1:397388:
@@ -52,9 +42,7 @@ public void button2_click1(GButton source, GEvent event) { //_CODE_:backButton2:
     showUserRecommendations = false;
   }
 
-  //showRecommendations = false;
-  //showUserRecommendations = false;
-  //displayLogin();
+
   println("backButton2 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:backButton2:968307:
 
