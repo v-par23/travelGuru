@@ -19,6 +19,7 @@ String usernameInput = "";
 String passwordInput = "";
 String registrationMessage = "";
 int currentQuestion = 0;
+int numDest = 2;
 int recommendationsPerRow = 4;  
 boolean showRecommendations = false;
 boolean showDropdown = false;
@@ -390,7 +391,7 @@ void recommendDestination() {
 
   recommendedDestinations.clear();
   int count = 0;
-  for (int i = 0; i < scores.size() && count < 3; i++) {
+  for (int i = 0; i < scores.size() && count < numDest; i++) {
     Destination dest = scores.get(i).destination;
     if (!currentUser.recommendations.contains(dest.name)) {
       recommendedDestinations.add(dest);
