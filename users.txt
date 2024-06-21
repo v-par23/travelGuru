@@ -1,3 +1,3 @@
 ved,dip23
-john,1234,Hawaii,United States,Vietnam,Iceland,Iceland,Iceland,Iceland,New Zealand,Dubai,Iceland,Iceland,United States,Norway,Switzerland,Italy,China
+john,1234,Hawaii,United States,Vietnam,Norway,Switzerland,Italy,China,Thailand,India,Mexico,Morocco,Argentina
 jane,abcd,Paris

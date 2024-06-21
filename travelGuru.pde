@@ -54,10 +54,12 @@ void draw() {
 
   if (!introComplete && !transitioning) {
     introScreen();
-    backButton.setVisible(false);
+    backButton1.setVisible(false);
+    backButton2.setVisible(false);
   } else if (transitioning) {
     introScreen();
-    backButton.setVisible(false);
+    backButton1.setVisible(false);
+    backButton2.setVisible(false);
     fill(0, fadeValue);
     rect(0, 0, width, height);
     fadeValue += transitionSpeed;
@@ -68,21 +70,26 @@ void draw() {
   
   } else if (currentUser == null) {
     displayLogin();
-    backButton.setVisible(false);
+    backButton1.setVisible(false);
+    backButton2.setVisible(false);
   } else if (showUserRecommendations) {
     displayUserRecommendations();
-    backButton.setVisible(true);
+    backButton1.setVisible(true);
+    backButton2.setVisible(true);
   } else if (!showRecommendations) {
     displayQuestions();
     displayUserProfileIcon();
-    backButton.setVisible(true);
+    backButton1.setVisible(true);
+    backButton2.setVisible(false);
     if (showDropdown) {
       displayDropdownMenu();
-      backButton.setVisible(true);
+      backButton1.setVisible(true);
+      backButton2.setVisible(false);
     }
   } else {
     displayRecommendations();
-    backButton.setVisible(true);
+    backButton1.setVisible(true);
+    backButton2.setVisible(true);
   }
 }
 
