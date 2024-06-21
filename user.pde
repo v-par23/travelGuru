@@ -29,6 +29,19 @@ class User {
   //  }
   
   
+  //void addRecommendation(int index) {   
+//  if (index >= 0 && index < recommendedDestinations.size()) {
+//    Destination dest = recommendedDestinations.get(index);
+//    if (!currentUser.recommendations.contains(dest.name)) {
+//      currentUser.recommendations.add(dest.name);
+//      saveUsers();
+//      println("Added recommendation: " + dest.name + " for user: " + currentUser.username);
+//    } else {
+//      println("Destination already in recommendations: " + dest.name);
+//    }
+//  }
+//}
+  
   
 
 

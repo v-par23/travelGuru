@@ -15,6 +15,12 @@
  */
 
 public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButton1:397388:
+
+  if (showRecommendations) {
+    showRecommendations = false;
+  } else if (showUserRecommendations) {
+    showUserRecommendations = false;
+  }
   //if (currentUser == null) {
   //    introComplete = false; // Navigate back to the intro screen
   //  } else {
@@ -30,6 +36,12 @@ public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButto
 } //_CODE_:backButton1:397388:
 
 public void button2_click1(GButton source, GEvent event) { //_CODE_:backButton2:968307:
+    if (showRecommendations) {
+    showRecommendations = false;
+  } else if (showUserRecommendations) {
+    showUserRecommendations = false;
+  }
+
   //showRecommendations = false;
   //showUserRecommendations = false;
   //displayLogin();
