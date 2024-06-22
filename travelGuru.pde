@@ -413,14 +413,6 @@ void recommendDestination() {
   }
 }
 
-void addRecommendation(int index) {
-  if (index >= 0 && index < recommendedDestinations.size()) {
-    Destination destination = recommendedDestinations.get(index);
-    if (!currentUser.recommendations.contains(destination.name)) {
-      currentUser.recommendations.add(destination.name);
-    }
-  }
-}
 
 void displayRecommendations() {
   fill(0);
@@ -440,7 +432,6 @@ void displayRecommendations() {
       } else if (i == 2) {
         yPosition = 3 * height / 4; // Bottom
       }
-
       text("Recommended Destination " + (i + 1) + ": " + dest.name, width / 2, yPosition - 20);
       text("Budget: $" + dest.budget, width / 2, yPosition + 20);
       text("Climate: " + dest.climate, width / 2, yPosition + 60);
