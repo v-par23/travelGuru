@@ -129,6 +129,14 @@ void introScreen() {
   text("Welcome to TravelGuru!", width / 2, height / 7);
 }
 
+void resetQuestions() {
+  for (int i = 0; i < userInputs.length; i++){
+    userInputs[i] = "";
+  }
+  currentQuestion = 0;
+  showRecommendations = false;
+}
+
 void displayLogin() {
   fill(0);
   textSize(24);
@@ -210,6 +218,8 @@ void displayUserRecommendations() {
     text(currentUser.recommendations.get(i), xOffset + col * spacingX, yOffset + row * spacingY);
   }
 }
+
+
 
 void mouseClicked() {
   if (!introComplete && !transitioning) {
@@ -449,5 +459,29 @@ void saveRecommendation(String username, String recommendation) {
       user.recommendations.add(recommendation);
       saveUsers();
     }
+  }
+}
+
+
+void saveSpecifiedRecommendations(String input) {
+  if (currentUser != null && input != null && !input.trim().isEmpty()) {
+    String[] countries = split(input, ',');
+    for (String country : countries) {
+      country = country.trim();
+      boolean found = false;
+      for (Destination dest : recommendedDestinations) {
+        if (dest.name.equalsIgnoreCase(country)) {
+          saveRecommendation(currentUser.username, dest.name);
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        println("Destination not in recommendations: " + country);
+      }
+    }
+    println("Specified recommendations saved for user: " + currentUser.username);
+  } else {
+    println("No user logged in or empty input.");
   }
 }
