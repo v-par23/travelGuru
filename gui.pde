@@ -76,9 +76,8 @@ public void createGUI(){
   slider1.setNumberFormat(G4P.DECIMAL, 1);
   slider1.setOpaque(true);
   slider1.addEventHandler(this, "slider1_change1");
-  desti = new GTextField(this, 233, 271, 120, 30, G4P.SCROLLBARS_NONE);
-  desti.setText("Enter the destinationss you would like to save");
-  desti.setPromptText("Enter the destinationss you would like to save");
+  desti = new GTextField(this, 873, 321, 260, 30, G4P.SCROLLBARS_NONE);
+  desti.setPromptText("Enter the destinations you would like to save");
   desti.setOpaque(true);
   desti.addEventHandler(this, "desti_change1");
 }
