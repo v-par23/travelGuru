@@ -413,6 +413,16 @@ void recommendDestination() {
   });
 
   recommendedDestinations.clear();
+  //String destinationInput = desti.getText().trim(); // Get the user input from the desti text field
+  //  for (Destination dest : destinations) {
+  //      if (destinationInput.isEmpty() || dest.name.toLowerCase().contains(destinationInput.toLowerCase())) {
+  //          recommendedDestinations.add(dest);
+  //          if (recommendedDestinations.size() >= numDest) {
+  //              break;
+  //          }
+  //      }
+  //  }
+  //  showRecommendations = true;
   int count = 0;
   for (int i = 0; i < scores.size() && count < numDest; i++) {
     Destination dest = scores.get(i).destination;
