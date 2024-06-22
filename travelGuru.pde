@@ -411,8 +411,27 @@ void recommendDestination() {
       return s1.score - s2.score;
     }
   });
-
+  String destinationInput = desti.getText().trim().toLowerCase(); // Get user input and convert to lower case for case-insensitive comparison
   recommendedDestinations.clear();
+  int count = 0;
+
+  for (Destination dest : destinations) {
+    if (destinationInput.isEmpty() || dest.name.toLowerCase().contains(destinationInput)) {
+      if (!currentUser.recommendations.contains(dest.name)) {
+        recommendedDestinations.add(dest);
+        count++;
+        if (count >= numDest) {
+          break;
+        }
+      }
+    }
+  }
+
+  showRecommendations = true;
+}
+
+  //recommendedDestinations.clear();
+  
   //String destinationInput = desti.getText().trim(); // Get the user input from the desti text field
   //  for (Destination dest : destinations) {
   //      if (destinationInput.isEmpty() || dest.name.toLowerCase().contains(destinationInput.toLowerCase())) {
@@ -423,15 +442,16 @@ void recommendDestination() {
   //      }
   //  }
   //  showRecommendations = true;
-  int count = 0;
-  for (int i = 0; i < scores.size() && count < numDest; i++) {
-    Destination dest = scores.get(i).destination;
-    if (!currentUser.recommendations.contains(dest.name)) {
-      recommendedDestinations.add(dest);
-      count++;
-    }
-  }
-}
+  
+//  int count = 0;
+//  for (int i = 0; i < scores.size() && count < numDest; i++) {
+//    Destination dest = scores.get(i).destination;
+//    if (!currentUser.recommendations.contains(dest.name)) {
+//      recommendedDestinations.add(dest);
+//      count++;
+//    }
+//  }
+//}
 
 
 void displayRecommendations() {
