@@ -1,4 +1,4 @@
-ved,dip23,Vietnam,Thailand,India,Hawaii,Switzerland,Paris,Iceland,United States,Mexico,Malaysia,Japan,Australia,Brazil,Canada,Italy,Greece,Dubai,Morocco,South Africa,Norway,Spain,China
-john,1234,Hawaii,United States,Australia,Malaysia,Sri Lanka,Philippines,Morocco,Argentina,Nepal,Costa Rica,Jamaica,Switzerland,Italy,Bahamas,Dubai,New Zealand,Iceland,Scotland,Taiwan,China,Austria,Norway,Japan,South Africa,Sweden
-jane,abcd,Paris,Iceland,United States,Norway
-whyrat,kohli,Vietnam,India,Thailand
+ved,dip23,Austria,Chile,Netherlands,Hong Kong,Costa Rica,India,Thailand,Mexico,Vietnam,Malaysia,Maldives,Australia,Iceland,United States
+john,1234
+jane,abcd,Paris,Iceland,United States,Norway,Thailand,India,Mexico,Vietnam,Malaysia,Sri Lanka,Morocco,Argentina,Philippines,Nepal,Hawaii,Egypt,Czech Republic,Greece,Peru,Hungary,Portugal,Turkey,Brazil,Belgium,Croatia,France,Canada,Spain,Ireland,South Korea,Austria,Chile,Netherlands,Hong Kong,Switzerland,Scotland,Italy,Costa Rica,Jamaica,New Zealand,Japan,South Africa,Dubai,China
+whyrat,kohli,Vietnam,India,Thailand,Mexico,Malaysia,Sri Lanka,Morocco,Argentina,Philippines,Nepal,Hawaii,Egypt,Czech Republic,Peru,Hungary,Greece,Brazil,Portugal,Turkey,Belgium,Canada,Ireland,France,Spain,Croatia,South Korea,Austria,Chile,Netherlands,Hong Kong

@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.io.PrintWriter;
 
+PFont regularFont;
+PFont boldFont;
 
 ArrayList<Destination> destinations = new ArrayList<Destination>();
 HashMap<String, User> users = new HashMap<String, User>();
@@ -33,6 +35,9 @@ boolean introComplete = false;
 boolean transitioning = false;
 int fadeValue = 0;
 int transitionSpeed = 5;  // transition speed value
+
+regularFont = createFont("ArialMT-48.vlw", 48); // Adjust the font name if necessary
+boldFont = createFont("Arial-Bold-48.vlw", 48);
 
 void setup() {
   size(1200, 700);
@@ -412,11 +417,13 @@ void recommendDestination() {
       return s1.score - s2.score;
     }
   });
-  String destinationInput = desti.getText().trim().toLowerCase(); // Get user input and convert to lower case for case-insensitive comparison
+
   recommendedDestinations.clear();
+  String destinationInput = desti.getText().trim().toLowerCase(); // Get user input and convert to lower case for case-insensitive comparison
   int count = 0;
 
-  for (Destination dest : destinations) {
+  for (DestinationScore score : scores) {
+    Destination dest = score.destination;
     if (destinationInput.isEmpty() || dest.name.toLowerCase().contains(destinationInput)) {
       if (!currentUser.recommendations.contains(dest.name)) {
         recommendedDestinations.add(dest);
@@ -431,33 +438,11 @@ void recommendDestination() {
   showRecommendations = true;
 }
 
-  //recommendedDestinations.clear();
-  
-  //String destinationInput = desti.getText().trim(); // Get the user input from the desti text field
-  //  for (Destination dest : destinations) {
-  //      if (destinationInput.isEmpty() || dest.name.toLowerCase().contains(destinationInput.toLowerCase())) {
-  //          recommendedDestinations.add(dest);
-  //          if (recommendedDestinations.size() >= numDest) {
-  //              break;
-  //          }
-  //      }
-  //  }
-  //  showRecommendations = true;
-  
-//  int count = 0;
-//  for (int i = 0; i < scores.size() && count < numDest; i++) {
-//    Destination dest = scores.get(i).destination;
-//    if (!currentUser.recommendations.contains(dest.name)) {
-//      recommendedDestinations.add(dest);
-//      count++;
-//    }
-//  }
-//}
 
 
 void displayRecommendations() {
   fill(0);
-  textSize(24);
+  textSize(15);
   textAlign(CENTER, CENTER);
 
   if (!recommendedDestinations.isEmpty()) {
@@ -467,16 +452,24 @@ void displayRecommendations() {
 
       // Position the recommendations
       if (i == 0) {
-        yPosition = height / 4; // Top
+        yPosition = height / 16; // Tops
       } else if (i == 1) {
-        yPosition = height / 2; // Middle
+        yPosition = 8 * height / 33; // Middle
       } else if (i == 2) {
-        yPosition = 3 * height / 4; // Bottom
+        yPosition = 3 * height / 7; // Bottom
       }
+        else if (i == 3) {
+        yPosition = 20 * height / 33; // Bottom
+      }
+        else if (i == 4) {
+        yPosition = 26 * height / 33; // Bottom
+      }
+      textFont(boldFont);
       text("Recommended Destination " + (i + 1) + ": " + dest.name, width / 2, yPosition - 20);
-      text("Budget: $" + dest.budget, width / 2, yPosition + 20);
-      text("Climate: " + dest.climate, width / 2, yPosition + 60);
-      text("Activities: " + join(dest.activities, ", "), width / 2, yPosition + 100);
+      textFont(regularFont);
+      text("Budget: $" + dest.budget, width / 2, yPosition + 10);
+      text("Climate: " + dest.climate, width / 2, yPosition + 40);
+      text("Activities: " + join(dest.activities, ", "), width / 2, yPosition + 70);
     }
   } else {
     text("No destination matches found", width / 2, height / 2);
