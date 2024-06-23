@@ -6,9 +6,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.io.PrintWriter;
 
-PFont regularFont;
-PFont boldFont;
-
 ArrayList<Destination> destinations = new ArrayList<Destination>();
 HashMap<String, User> users = new HashMap<String, User>();
 String[] questions = {
@@ -35,9 +32,6 @@ boolean introComplete = false;
 boolean transitioning = false;
 int fadeValue = 0;
 int transitionSpeed = 5;  // transition speed value
-
-regularFont = createFont("ArialMT-48.vlw", 48); // Adjust the font name if necessary
-boldFont = createFont("Arial-Bold-48.vlw", 48);
 
 void setup() {
   size(1200, 700);
@@ -464,9 +458,9 @@ void displayRecommendations() {
         else if (i == 4) {
         yPosition = 26 * height / 33; // Bottom
       }
-      textFont(boldFont);
+      fill(255,0,0);
       text("Recommended Destination " + (i + 1) + ": " + dest.name, width / 2, yPosition - 20);
-      textFont(regularFont);
+      fill(0);
       text("Budget: $" + dest.budget, width / 2, yPosition + 10);
       text("Climate: " + dest.climate, width / 2, yPosition + 40);
       text("Activities: " + join(dest.activities, ", "), width / 2, yPosition + 70);
