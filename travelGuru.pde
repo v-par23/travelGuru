@@ -124,9 +124,9 @@ void introScreen() {
   image(gameLogo, width / 2 - gameLogo.width / 2, height / 4 - gameLogo.height / 4);
   image(startButton, width / 2 - startButton.width / 2, height / 2 + gameLogo.height / 2 + 20);
   fill(0);
-  textSize(40);
+  textSize(48);
   textAlign(CENTER, CENTER);
-  text("Welcome to TravelGuru!", width / 2, height / 7);
+  text("Welcome to TravelGuru!", width / 2, height / 9);
 }
 
 void resetQuestions() {
@@ -139,9 +139,10 @@ void resetQuestions() {
 
 void displayLogin() {
   fill(0);
-  textSize(24);
+  textSize(36);
   textAlign(CENTER, CENTER);
-  text("Please Login or Register", width / 2, height / 3);
+  text("Please Login or Register", width / 2, height / 4);
+  textSize(24);
   textAlign(LEFT);
   text("Username:", width / 2 - 125, height / 2 - 20);
   text("Password:", width / 2 - 125, height / 2 + 20);
@@ -174,10 +175,10 @@ void displayLogin() {
 
 void displayQuestions() {
   fill(0);
-  textSize(24);
+  textSize(20);
   textAlign(LEFT);
   for (int i = 0; i < questions.length; i++) {
-    text(questions[i], 50, 100 + i * 50);
+    text(questions[i], 50, 105 + i * 50);
     if (userInputs[i] != null) {
       text(userInputs[i], 50, 130 + i * 50);
     }
