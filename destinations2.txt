@@ -1,6 +1,6 @@
 Hawaii,1500,warm,beach hiking surfing
 Switzerland,2000,cold,skiing hiking sightseeing
-Paris,1800,moderate,sightseeing museums dining
+France,1800,moderate,sightseeing museums dining
 Thailand,1200,warm,beach nightlife temples
 Japan,2200,moderate,sightseeing temples shopping
 Iceland,2500,cold,sightseeing hiking geysers

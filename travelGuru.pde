@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.io.PrintWriter;
 
+
 ArrayList<Destination> destinations = new ArrayList<Destination>();
 HashMap<String, User> users = new HashMap<String, User>();
 String[] questions = {
