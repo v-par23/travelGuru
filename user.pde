@@ -10,6 +10,9 @@ class User {
   }
 }
 
+void addDestination(Destination d) {
+    destinations.add(d);
+  }
 
   
   

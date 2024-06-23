@@ -1,4 +1,4 @@
-ved,dip23,Austria,Chile,Netherlands,Hong Kong,Costa Rica,India,Thailand,Mexico,Vietnam,Malaysia,Maldives,Australia,Iceland,United States
+ved,dip23,Austria,Chile,Netherlands,Hong Kong,Costa Rica,India,Thailand,Mexico,Vietnam,Malaysia,Maldives,Australia,Iceland,United States,Sri Lanka,Morocco,Philippines,Argentina,Nepal
 bob,ki,India,Thailand
 vedant,patel,Iceland,United States,Norway,Thailand,India,Hawaii,Egypt,Czech Republic,Mexico,Vietnam,Malaysia,Sri Lanka,Taiwan,Italy,Switzerland,Costa Rica,New Zealand,Japan,Morocco,Argentina
 john,1234

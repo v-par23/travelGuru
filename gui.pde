@@ -44,7 +44,20 @@ public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:358
   println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:slider1:358523:
 
-public void desti_change1(GTextField source, GEvent event) { //_CODE_:desti:774704:
+public void desti_change1(GTextField source, GEvent event) { //_CODE_:desti:774704
+  //if (event == GEvent.ENTERED) {
+  //  String enteredText = desti.getText().trim();
+  //  if (!enteredText.isEmpty() && currentUser != null) {
+  //    for (Destination d : recommendedDestinations) {
+  //      if (d.name.equalsIgnoreCase(enteredText)) {
+  //        currentUser.addDestination(d);
+  //        saveUsers();
+  //        desti.setText("");  // Clear the text field after saving the destination
+  //        break;
+  //      }
+  //    }
+  //  }
+  //}
   if (event == GEvent.ENTERED || event == GEvent.LOST_FOCUS) {
     String input = desti.getText();
     saveSpecifiedRecommendations(input);
