@@ -7,7 +7,9 @@ import java.util.Comparator;
 import java.io.PrintWriter;
 
 ArrayList<Destination> destinations = new ArrayList<Destination>();
+ArrayList<Destination> recommendedDestinations = new ArrayList<Destination>();
 HashMap<String, User> users = new HashMap<String, User>();
+
 String[] questions = {
   "Enter your vacation duration (e.g., 7 days):",
   "Enter your total budget (e.g., $2000):",
@@ -18,20 +20,22 @@ String[] userInputs = new String[questions.length];
 String usernameInput = "";
 String passwordInput = "";
 String registrationMessage = "";
+
 int currentQuestion = 0;
+int recommendationsPerRow = 4; 
+int fadeValue = 0;
+int transitionSpeed = 5;  // transition speed value
 float numDest = 2;
-int recommendationsPerRow = 4;  
+ 
 boolean showRecommendations = false;
 boolean showDropdown = false;
 boolean showUserRecommendations = false;
-ArrayList<Destination> recommendedDestinations = new ArrayList<Destination>();
+boolean introComplete = false;
+boolean transitioning = false;
+
 User currentUser = null;
 
 PImage gameLogo, startButton, introBackground, userProfileIcon;
-boolean introComplete = false;
-boolean transitioning = false;
-int fadeValue = 0;
-int transitionSpeed = 5;  // transition speed value
 
 void setup() {
   size(1200, 700);
@@ -202,6 +206,42 @@ void displayDropdownMenu() {
   text("Show Recommendations", width - 170, 70);
 }
 
+void displayRecommendations() {
+  fill(0);
+  textSize(15);
+  textAlign(CENTER, CENTER);
+
+  if (!recommendedDestinations.isEmpty()) {
+    for (int i = 0; i < recommendedDestinations.size(); i++) {
+      Destination dest = recommendedDestinations.get(i);
+      int yPosition = 0;
+
+      // Position the recommendations
+      if (i == 0) {
+        yPosition = height / 16; // Tops
+      } else if (i == 1) {
+        yPosition = 8 * height / 33; // Middle
+      } else if (i == 2) {
+        yPosition = 3 * height / 7; // Bottom
+      }
+        else if (i == 3) {
+        yPosition = 20 * height / 33; // Bottom
+      }
+        else if (i == 4) {
+        yPosition = 26 * height / 33; // Bottom
+      }
+      fill(255,0,0);
+      text("Recommended Destination " + (i + 1) + ": " + dest.name, width / 2, yPosition - 20);
+      fill(0);
+      text("Budget: $" + dest.budget, width / 2, yPosition + 10);
+      text("Climate: " + dest.climate, width / 2, yPosition + 40);
+      text("Activities: " + join(dest.activities, ", "), width / 2, yPosition + 70);
+    }
+  } else {
+    text("No destination matches found", width / 2, height / 2);
+  }
+}
+
 void displayUserRecommendations() {
   fill(0);
   textSize(24);
@@ -219,8 +259,6 @@ void displayUserRecommendations() {
     text(currentUser.recommendations.get(i), xOffset + col * spacingX, yOffset + row * spacingY);
   }
 }
-
-
 
 void mouseClicked() {
   if (!introComplete && !transitioning) {
@@ -433,44 +471,6 @@ void recommendDestination() {
   showRecommendations = true;
 }
 
-
-
-void displayRecommendations() {
-  fill(0);
-  textSize(15);
-  textAlign(CENTER, CENTER);
-
-  if (!recommendedDestinations.isEmpty()) {
-    for (int i = 0; i < recommendedDestinations.size(); i++) {
-      Destination dest = recommendedDestinations.get(i);
-      int yPosition = 0;
-
-      // Position the recommendations
-      if (i == 0) {
-        yPosition = height / 16; // Tops
-      } else if (i == 1) {
-        yPosition = 8 * height / 33; // Middle
-      } else if (i == 2) {
-        yPosition = 3 * height / 7; // Bottom
-      }
-        else if (i == 3) {
-        yPosition = 20 * height / 33; // Bottom
-      }
-        else if (i == 4) {
-        yPosition = 26 * height / 33; // Bottom
-      }
-      fill(255,0,0);
-      text("Recommended Destination " + (i + 1) + ": " + dest.name, width / 2, yPosition - 20);
-      fill(0);
-      text("Budget: $" + dest.budget, width / 2, yPosition + 10);
-      text("Climate: " + dest.climate, width / 2, yPosition + 40);
-      text("Activities: " + join(dest.activities, ", "), width / 2, yPosition + 70);
-    }
-  } else {
-    text("No destination matches found", width / 2, height / 2);
-  }
-}
-
 void saveRecommendation(String username, String recommendation) {
   if (users.containsKey(username)) {
     User user = users.get(username);
@@ -480,7 +480,6 @@ void saveRecommendation(String username, String recommendation) {
     }
   }
 }
-
 
 void saveSpecifiedRecommendations(String input) {
   if (currentUser != null && input != null && !input.trim().isEmpty()) {
