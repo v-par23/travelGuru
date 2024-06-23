@@ -473,9 +473,6 @@ void saveUsers() {
   writer.close();
 }
 
-
-
-
 void recommendDestination() {
     ArrayList<DestinationScore> scores = new ArrayList<DestinationScore>();
     int userBudget = int(userInputs[1].replaceAll("[^\\d]", ""));
