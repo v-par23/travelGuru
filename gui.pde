@@ -69,7 +69,7 @@ public void createGUI(){
   backButton2.addEventHandler(this, "button2_click1");
   slider1 = new GSlider(this, 83, 370, 100, 40, 10.0);
   slider1.setShowValue(true);
-  slider1.setLimits(3.0, 1.0, 5.0);
+  slider1.setLimits(2.0, 1.0, 5.0);
   slider1.setShowTicks(true);
   slider1.setNumberFormat(G4P.DECIMAL, 1);
   slider1.setOpaque(true);

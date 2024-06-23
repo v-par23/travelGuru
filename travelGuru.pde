@@ -324,26 +324,77 @@ void keyPressed() {
       }
     }
   } else if (!showRecommendations) {
-    if (keyCode == ENTER) {
-      currentQuestion++;
-      if (currentQuestion >= questions.length) {
-        recommendDestination();
-        showRecommendations = true;
-        for (Destination dest : recommendedDestinations) {
-          saveRecommendation(currentUser.username, dest.name);
-        }
-      }
-    } else if (keyCode == BACKSPACE) {
-      if (userInputs[currentQuestion] != null && userInputs[currentQuestion].length() > 0) {
-        userInputs[currentQuestion] = userInputs[currentQuestion].substring(0, userInputs[currentQuestion].length() - 1);
-      }
-    } else if (keyCode != SHIFT && keyCode != ALT && keyCode != CONTROL && keyCode != TAB && keyCode != DELETE && keyCode != ESC && keyCode != UP && keyCode != DOWN && keyCode != LEFT && keyCode != RIGHT) {
-      if (userInputs[currentQuestion] == null) {
-        userInputs[currentQuestion] = "";
-      }
-      userInputs[currentQuestion] += key;
-    }
+      handleQuestionInput();
   }
+}
+
+void handleQuestionInput() {
+  String validationMessage = "";
+
+  if (keyCode == ENTER) {
+    if (currentQuestion == 0 && !isValidDuration(userInputs[currentQuestion])) {
+      validationMessage = "Invalid duration. Please enter a valid number of days (1-365).";
+    } else if (currentQuestion == 1 && !isValidBudget(userInputs[currentQuestion])) {
+      validationMessage = "Invalid budget. Please enter a valid budget.";
+    } else if (currentQuestion == 2 && !isValidClimate(userInputs[currentQuestion])) {
+      validationMessage = "Invalid climate. Please enter 'warm', 'cold', or 'moderate'.";
+    } else if (currentQuestion == 3 && !isValidActivities()) {
+      validationMessage = "Invalid activities. Please enter valid activities separated by commas.";
+    } else {
+      currentQuestion++;
+    }
+
+    if (currentQuestion >= questions.length) {
+      recommendDestination();
+      showRecommendations = true;
+      for (Destination dest : recommendedDestinations) {
+        saveRecommendation(currentUser.username, dest.name);
+      }
+    }
+  } else if (keyCode == BACKSPACE) {
+    if (userInputs[currentQuestion] != null && userInputs[currentQuestion].length() > 0) {
+      userInputs[currentQuestion] = userInputs[currentQuestion].substring(0, userInputs[currentQuestion].length() - 1);
+    }
+  } else if (keyCode != SHIFT && keyCode != ALT && keyCode != CONTROL && keyCode != TAB && keyCode != DELETE && keyCode != ESC && keyCode != UP && keyCode != DOWN && keyCode != LEFT && keyCode != RIGHT) {
+    if (userInputs[currentQuestion] == null) {
+      userInputs[currentQuestion] = "";
+    }
+    userInputs[currentQuestion] += key;
+  }
+}
+
+boolean isNumeric(String str) {
+  try {
+    Integer.parseInt(str);
+    return true;
+  } catch (NumberFormatException e) {
+    return false;
+  }
+}
+
+boolean isValidDuration(String duration) {
+  if (isNumeric(duration)) {
+    int days = Integer.parseInt(duration);
+    return days > 0 && days <= 365;
+  }
+  return false;
+}
+
+boolean isValidBudget(String budget) {
+  if (isNumeric(budget)) {
+    int amount = Integer.parseInt(budget);
+    return amount > 0;
+  }
+  return false;
+}
+
+boolean isValidClimate(String climate) {
+  String[] validClimates = {"warm", "cold", "moderate"};
+  return Arrays.asList(validClimates).contains(climate.toLowerCase());
+}
+
+boolean isValidActivities() {
+  return true;
 }
 
 void loadDestinations() {
