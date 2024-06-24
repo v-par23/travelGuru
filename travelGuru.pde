@@ -329,25 +329,6 @@ void keyPressed() {
 }
 
 void handleQuestionInput() {
-  //String validationMessage = "";
-
-  //if (keyCode == ENTER) {
-  //  if (userInputs[currentQuestion] == null || userInputs[currentQuestion].trim().isEmpty()) {
-  //    return;  // Do not advance if the current input is empty
-  //  }
-    
-  //  if (currentQuestion == 0 && !isValidDuration(userInputs[currentQuestion])) {
-  //    validationMessage = "Invalid duration. Please enter a valid number of days (1-365).";
-  //  } else if (currentQuestion == 1 && !isValidBudget(userInputs[currentQuestion])) {
-  //    validationMessage = "Invalid budget. Please enter a valid budget.";
-  //  } else if (currentQuestion == 2 && !isValidClimate(userInputs[currentQuestion])) {
-  //    validationMessage = "Invalid climate. Please enter 'warm', 'cold', or 'moderate'.";
-  //  } else if (currentQuestion == 3 && !isValidActivities()) {
-  //    validationMessage = "Invalid activities. Please enter valid activities separated by commas.";
-  //  } else {
-  //    currentQuestion++;
-  //  }
-  
     if (keyCode == ENTER) {
     // Check if the current question has an input
     if (userInputs[currentQuestion] == null || userInputs[currentQuestion].trim().isEmpty()) {
