@@ -31,19 +31,17 @@ void recommendDestination() {
 
     // Filter and add matching destinations to the recommendedDestinations list
     recommendedDestinations.clear();
-    String destinationInput = desti.getText().trim(); // Get user input and convert to lowercase
+    // Update to reflect the changes
     int count = 0;
 
     for (DestinationScore score : scores) {
         Destination dest = score.destination;
-        if (destinationInput.isEmpty() || dest.name.contains(destinationInput)) {
-            if (!currentUser.recommendations.contains(dest.name)) {
-                recommendedDestinations.add(dest);
-                count++;
-                if (count >= numDest) {
-                    break;
-                }
-            }
+        // Adjust the logic here as per your application's needs
+        // Example logic: add all scored destinations
+        recommendedDestinations.add(dest);
+        count++;
+        if (count >= numDest) {
+            break;
         }
     }
 
@@ -58,29 +56,6 @@ int countMatchingActivities(String[] destActivities, String[] userActivities) {
     }
   }
   return matchCount;
-}
-
-void saveSpecifiedRecommendations(String input) {
-  if (currentUser != null && input != null && !input.trim().isEmpty()) {
-    String[] countries = split(input, ',');
-    for (String country : countries) {
-      country = country.trim();
-      boolean found = false;
-      for (Destination dest : recommendedDestinations) {
-        if (dest.name.equalsIgnoreCase(country)) {
-          saveRecommendation(currentUser.username, dest.name);
-          found = true;
-          break;
-        }
-      }
-      if (!found) {
-        println("Destination not in recommendations: " + country);
-      }
-    }
-    println("Specified recommendations saved for user: " + currentUser.username);
-  } else {
-    println("No user logged in or empty input.");
-  }
 }
 
 void saveRecommendation(String username, String recommendation) {

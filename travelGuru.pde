@@ -25,7 +25,7 @@ int currentQuestion = 0;
 int recommendationsPerRow = 4; 
 int fadeValue = 0;
 int transitionSpeed = 5;  // transition speed value
-float numDest = 2;
+float numDest = 3;
  
 boolean showRecommendations = false;
 boolean showDropdown = false;
@@ -63,13 +63,11 @@ void draw() {
     backButton1.setVisible(false);
     backButton2.setVisible(false);
     slider1.setVisible(false);
-    desti.setVisible(false);
   } else if (transitioning) {
     introScreen();
     backButton1.setVisible(false);
     backButton2.setVisible(false);
     slider1.setVisible(false);
-    desti.setVisible(false);
     fill(0, fadeValue);
     rect(0, 0, width, height);
     fadeValue += transitionSpeed;
@@ -83,13 +81,11 @@ void draw() {
     backButton1.setVisible(false);
     backButton2.setVisible(false);
     slider1.setVisible(false);
-    desti.setVisible(false);
   } else if (showUserRecommendations) {
     displayUserRecommendations();
     backButton1.setVisible(true);
     backButton2.setVisible(true);
     slider1.setVisible(false);
-    desti.setVisible(false);
   } else if (!showRecommendations) {
     fill(0);
     textSize(20);
@@ -101,21 +97,18 @@ void draw() {
     backButton1.setVisible(true);
     backButton2.setVisible(false);
     slider1.setVisible(true);
-    desti.setVisible(false);
     if (showDropdown) {
       displayDropdownMenu();
       backButton1.setVisible(true);
       backButton2.setVisible(false);
       slider1.setVisible(true);
-      desti.setVisible(false);
     }
   } else {
     displayRecommendations();
     displayUserProfileIcon();
     backButton1.setVisible(true);
     backButton2.setVisible(true);
-    slider1.setVisible(false);
-    desti.setVisible(true);    
+    slider1.setVisible(false);  
       if (showDropdown) {
         displayDropdownMenu();
       }
