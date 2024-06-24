@@ -80,12 +80,12 @@ public void createGUI(){
   backButton2 = new GButton(this, 157, 651, 80, 30);
   backButton2.setText("Recomend Destination");
   backButton2.addEventHandler(this, "button2_click1");
-  slider1 = new GSlider(this, 83, 370, 100, 40, 10.0);
+  slider1 = new GSlider(this, 83, 390, 100, 40, 10.0);
   slider1.setShowValue(true);
-  slider1.setLimits(2.0, 1.0, 5.0);
+  slider1.setLimits(3.0, 1.0, 5.0);
   slider1.setShowTicks(true);
-  slider1.setNumberFormat(G4P.DECIMAL, 1);
-  slider1.setOpaque(true);
+  slider1.setNumberFormat(G4P.DECIMAL, -1);
+  slider1.setOpaque(false);
   slider1.addEventHandler(this, "slider1_change1");
   desti = new GTextField(this, 873, 321, 260, 30, G4P.SCROLLBARS_NONE);
   desti.setPromptText("Enter the destinations you would like to save");

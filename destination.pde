@@ -11,3 +11,7 @@ class Destination {
     this.activities = activities;
   }
 }
+
+void addDestination(Destination d) {
+    destinations.add(d);
+  }
