@@ -93,9 +93,11 @@ void draw() {
   } else if (!showRecommendations) {
     fill(0);
     textSize(20);
+    textAlign(LEFT);
     text("Choose how many number of destinations to be recomended at once", 50, 350);
     displayQuestions();
     displayUserProfileIcon();
+    displayResetButton();
     backButton1.setVisible(true);
     backButton2.setVisible(false);
     slider1.setVisible(true);
@@ -104,9 +106,6 @@ void draw() {
       displayDropdownMenu();
       backButton1.setVisible(true);
       backButton2.setVisible(false);
-      fill(0);
-      textSize(20);
-      text("Choose how many number of destinations to be recomended at once", 50, 350);
       slider1.setVisible(true);
       desti.setVisible(false);
     }
@@ -194,16 +193,16 @@ void displayQuestions() {
 }
 
 void displayUserProfileIcon() {
-  image(userProfileIcon, width - 60, 10);
+  image(userProfileIcon, width - 90, 10);
 }
 
 void displayDropdownMenu() {
   fill(200);
-  rect(width - 175, 60, 180, 40);
+  rect(width - 220, 60, 200, 40);
   fill(0);
   textSize(16);
   textAlign(LEFT, TOP);
-  text("Show Recommendations", width - 170, 70);
+  text("Show Recommendations", width - 215, 70);
 }
 
 void displayRecommendations() {
@@ -260,6 +259,14 @@ void displayUserRecommendations() {
   }
 }
 
+void displayResetButton() {
+  fill(200);
+  rect(610, 140, 170, 40);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  text("Reset Questions", 695, 160);
+}
+
 void mouseClicked() {
   if (!introComplete && !transitioning) {
     if (mouseX > width / 2 - startButton.width / 2 && mouseX < width / 2 + startButton.width / 2 &&
@@ -289,13 +296,16 @@ void mouseClicked() {
     }
   } else {
     // Handle user profile icon click
-    if (mouseX > width - 60 && mouseX < width - 10 && mouseY > 10 && mouseY < 60) {
+    if (mouseX > width - 90 && mouseX < width - 40 && mouseY > 10 && mouseY < 60) {
       showDropdown = !showDropdown;
     }
     // Handle dropdown menu option click
-    if (showDropdown && mouseX > width - 160 && mouseX < width - 10 && mouseY > 60 && mouseY < 100) {
+    if (showDropdown && mouseX > width - 220 && mouseX < width - 220 + 200 && mouseY > 60 && mouseY < 100) {
       showDropdown = false;
       showUserRecommendations = true;
+    }
+    if (mouseX >= 610 && mouseX <= 780 && mouseY >= 140 && mouseY <= 180) {
+      resetQuestions();
     }
   }
 }
