@@ -1,4 +1,4 @@
-ved,dip23,Maldives,Dubai,South Africa,Bahamas,Japan,Norway,Australia,Netherlands,Croatia,Belgium,Greece,Mexico,Peru,Hungary,Malaysia,Philippines,Sri Lanka,Nepal,Morocco,South Korea,Canada
+ved,dip23,Maldives,Dubai,South Africa,Bahamas,Japan,Norway,Australia,Netherlands,Croatia,Belgium,Greece,Mexico,Peru,Hungary,Malaysia,Philippines,Sri Lanka,Nepal,Morocco,South Korea,Canada,France,Portugal
 sach,1234
 vedant,patel,Iceland,United States,Norway,Thailand,India,Hawaii,Egypt,Czech Republic,Mexico,Vietnam,Malaysia,Sri Lanka,Taiwan,Italy,Switzerland,Costa Rica,New Zealand,Japan,Morocco,Argentina,Philippines,Nepal,Greece,Peru,South Africa,Dubai
 john,1234

@@ -74,10 +74,10 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  backButton1 = new GButton(this, 40, 651, 94, 33);
+  backButton1 = new GButton(this, 40, 591, 94, 33);
   backButton1.setText("Switch User / Logout");
   backButton1.addEventHandler(this, "backButton_click1");
-  backButton2 = new GButton(this, 157, 651, 80, 30);
+  backButton2 = new GButton(this, 157, 591, 94, 33);
   backButton2.setText("Recomend Destination");
   backButton2.addEventHandler(this, "button2_click1");
   slider1 = new GSlider(this, 83, 390, 100, 40, 10.0);

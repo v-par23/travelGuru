@@ -93,9 +93,11 @@
 //  } else if (!showRecommendations) {
 //    fill(0);
 //    textSize(20);
+//    textAlign(LEFT);
 //    text("Choose how many number of destinations to be recomended at once", 50, 350);
 //    displayQuestions();
 //    displayUserProfileIcon();
+//    displayResetButton();
 //    backButton1.setVisible(true);
 //    backButton2.setVisible(false);
 //    slider1.setVisible(true);
@@ -104,9 +106,6 @@
 //      displayDropdownMenu();
 //      backButton1.setVisible(true);
 //      backButton2.setVisible(false);
-//      fill(0);
-//      textSize(20);
-//      text("Choose how many number of destinations to be recomended at once", 50, 350);
 //      slider1.setVisible(true);
 //      desti.setVisible(false);
 //    }
@@ -194,16 +193,16 @@
 //}
 
 //void displayUserProfileIcon() {
-//  image(userProfileIcon, width - 60, 10);
+//  image(userProfileIcon, width - 90, 10);
 //}
 
 //void displayDropdownMenu() {
 //  fill(200);
-//  rect(width - 175, 60, 180, 40);
+//  rect(width - 220, 60, 200, 40);
 //  fill(0);
 //  textSize(16);
 //  textAlign(LEFT, TOP);
-//  text("Show Recommendations", width - 170, 70);
+//  text("Show Recommendations", width - 215, 70);
 //}
 
 //void displayRecommendations() {
@@ -260,6 +259,14 @@
 //  }
 //}
 
+//void displayResetButton() {
+//  fill(200);
+//  rect(610, 140, 170, 40);
+//  fill(0);
+//  textAlign(CENTER, CENTER);
+//  text("Reset Questions", 695, 160);
+//}
+
 //void mouseClicked() {
 //  if (!introComplete && !transitioning) {
 //    if (mouseX > width / 2 - startButton.width / 2 && mouseX < width / 2 + startButton.width / 2 &&
@@ -289,13 +296,16 @@
 //    }
 //  } else {
 //    // Handle user profile icon click
-//    if (mouseX > width - 60 && mouseX < width - 10 && mouseY > 10 && mouseY < 60) {
+//    if (mouseX > width - 90 && mouseX < width - 40 && mouseY > 10 && mouseY < 60) {
 //      showDropdown = !showDropdown;
 //    }
 //    // Handle dropdown menu option click
-//    if (showDropdown && mouseX > width - 160 && mouseX < width - 10 && mouseY > 60 && mouseY < 100) {
+//    if (showDropdown && mouseX > width - 220 && mouseX < width - 220 + 200 && mouseY > 60 && mouseY < 100) {
 //      showDropdown = false;
 //      showUserRecommendations = true;
+//    }
+//    if (mouseX >= 610 && mouseX <= 780 && mouseY >= 140 && mouseY <= 180) {
+//      resetQuestions();
 //    }
 //  }
 //}
@@ -324,26 +334,88 @@
 //      }
 //    }
 //  } else if (!showRecommendations) {
-//    if (keyCode == ENTER) {
-//      currentQuestion++;
-//      if (currentQuestion >= questions.length) {
-//        recommendDestination();
-//        showRecommendations = true;
-//        for (Destination dest : recommendedDestinations) {
-//          saveRecommendation(currentUser.username, dest.name);
-//        }
-//      }
-//    } else if (keyCode == BACKSPACE) {
-//      if (userInputs[currentQuestion] != null && userInputs[currentQuestion].length() > 0) {
-//        userInputs[currentQuestion] = userInputs[currentQuestion].substring(0, userInputs[currentQuestion].length() - 1);
-//      }
-//    } else if (keyCode != SHIFT && keyCode != ALT && keyCode != CONTROL && keyCode != TAB && keyCode != DELETE && keyCode != ESC && keyCode != UP && keyCode != DOWN && keyCode != LEFT && keyCode != RIGHT) {
-//      if (userInputs[currentQuestion] == null) {
-//        userInputs[currentQuestion] = "";
-//      }
-//      userInputs[currentQuestion] += key;
-//    }
+//      handleQuestionInput();
 //  }
+//}
+
+//void handleQuestionInput() {
+//    if (keyCode == ENTER) {
+//    // Check if the current question has an input
+//    if (userInputs[currentQuestion] == null || userInputs[currentQuestion].trim().isEmpty()) {
+//      return;  // Do not advance if the current input is empty
+//    }
+
+//    // Validate the input based on the current question
+//    if (currentQuestion == 0 && !isValidDuration(userInputs[currentQuestion])) {
+//      println("Invalid duration. Please enter a valid number of days (1-365).");
+//      return;
+//    } else if (currentQuestion == 1 && !isValidBudget(userInputs[currentQuestion])) {
+//      println("Invalid budget. Please enter a valid budget.");
+//      return;
+//    } else if (currentQuestion == 2 && !isValidClimate(userInputs[currentQuestion])) {
+//      println("Invalid climate. Please enter 'warm', 'cold', or 'moderate'.");
+//      return;
+//    } else if (currentQuestion == 3 && !isValidActivities()) {
+//      println("Invalid activities. Please enter valid activities separated by commas.");
+//      return;
+//    }
+
+//    // Advance to the next question
+//    currentQuestion++;
+
+//    if (currentQuestion >= questions.length) {
+//      recommendDestination();
+//      showRecommendations = true;
+//      for (Destination dest : recommendedDestinations) {
+//        saveRecommendation(currentUser.username, dest.name);
+//      }
+//    }
+//  } else if (keyCode == BACKSPACE) {
+//    if (userInputs[currentQuestion] != null && userInputs[currentQuestion].length() > 0) {
+//      userInputs[currentQuestion] = userInputs[currentQuestion].substring(0, userInputs[currentQuestion].length() - 1);
+//    }
+//  } else if (keyCode != SHIFT && keyCode != ALT && keyCode != CONTROL && keyCode != TAB && keyCode != DELETE && keyCode != ESC && keyCode != UP && keyCode != DOWN && keyCode != LEFT && keyCode != RIGHT) {
+//    if (userInputs[currentQuestion] == null) {
+//      userInputs[currentQuestion] = "";
+//    }
+//    userInputs[currentQuestion] += key;
+//  }
+//}
+
+
+
+//boolean isNumeric(String str) {
+//  try {
+//    Integer.parseInt(str);
+//    return true;
+//  } catch (NumberFormatException e) {
+//    return false;
+//  }
+//}
+
+//boolean isValidDuration(String duration) {
+//  if (isNumeric(duration)) {
+//    int days = Integer.parseInt(duration);
+//    return days > 0 && days <= 365;
+//  }
+//  return false;
+//}
+
+//boolean isValidBudget(String budget) {
+//  if (isNumeric(budget)) {
+//    int amount = Integer.parseInt(budget);
+//    return amount > 0;
+//  }
+//  return false;
+//}
+
+//boolean isValidClimate(String climate) {
+//  String[] validClimates = {"warm", "cold", "moderate"};
+//  return Arrays.asList(validClimates).contains(climate.toLowerCase());
+//}
+
+//boolean isValidActivities() {
+//  return true;
 //}
 
 //void loadDestinations() {
@@ -383,6 +455,9 @@
 //      currentUser = user;
 //      registrationMessage = "";
 //      println("Login successful for user: " + username);
+//      currentQuestion = 0;  // Reset currentQuestion after successful login
+//      showRecommendations = false;  // Reset showRecommendations flag
+//      Arrays.fill(userInputs, null);  // Clear previous user inputs
 //    } else {
 //      registrationMessage = "Incorrect password.";
 //      println("Incorrect password for user: " + username);
@@ -421,9 +496,6 @@
 //  }
 //  writer.close();
 //}
-
-
-
 
 //void recommendDestination() {
 //    ArrayList<DestinationScore> scores = new ArrayList<DestinationScore>();
