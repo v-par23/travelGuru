@@ -1,48 +1,48 @@
-Hawaii,1500,warm,beach hiking surfing
-Switzerland,2000,cold,skiing hiking sightseeing
-France,1800,moderate,sightseeing museums dining
-Thailand,1200,warm,beach nightlife temples
-Japan,2200,moderate,sightseeing temples shopping
-Iceland,2500,cold,sightseeing hiking geysers
-Australia,3000,warm,beach sightseeing surfing
-United States,2500,moderate,sightseeing shopping dining
-Brazil,1700,warm,beach hiking nightlife
-Canada,1800,cold,skiing hiking sightseeing
-Italy,2000,moderate,sightseeing museums dining
-Greece,1600,warm,beach historical sightseeing
-Morocco,1400,warm,desert hiking historical
-South Africa,2200,warm,safari sightseeing hiking
-Norway,2300,cold,skiing fjords hiking
-Spain,1800,moderate,beach sightseeing dining
-Dubai,2800,warm,shopping sightseeing beach
-China,2100,moderate,temples sightseeing shopping
-Mexico,1300,warm,beach nightlife historical
-New Zealand,2700,moderate,hiking sightseeing adventure
-Austria,1900,cold,skiing sightseeing hiking
-Argentina,1400,moderate,sightseeing hiking nightlife
-Vietnam,1100,warm,beach historical cuisine
-Sweden,2100,cold,skiing hiking northern-lights
-India,1200,moderate,temples historical cuisine
-Egypt,1500,warm,desert historical diving
-Portugal,1700,moderate,beach surfing nightlife
-Croatia,1800,warm,beach historical sailing
-Maldives,3500,warm,beach snorkeling diving
-Peru,1600,moderate,hiking historical sightseeing
-Chile,1900,moderate,hiking sightseeing wine-tasting
-Costa Rica,2000,warm,beach hiking rainforest
-Turkey,1700,moderate,beach historical sightseeing
-Malaysia,1300,warm,beach rainforest diving
-Philippines,1400,warm,beach island-hopping diving
-Ireland,1800,cold,sightseeing hiking pubs
-Scotland,2000,cold,sightseeing hiking whiskey-tasting
-Czech Republic,1500,moderate,sightseeing historical beer-tasting
-Hungary,1600,moderate,sightseeing historical thermal-baths
-Netherlands,1900,cold,sightseeing museums cycling
-Belgium,1700,cold,sightseeing beer chocolate
-Jamaica,2000,warm,beach reggae hiking
-Bahamas,3000,warm,beach snorkeling diving
-Nepal,1400,moderate,hiking temples cultural
-Sri Lanka,1300,warm,beach wildlife temples
-Taiwan,2000,moderate,sightseeing temples hiking
-South Korea,1800,moderate,sightseeing temples cuisine
-Hong Kong,1900,moderate,sightseeing shopping nightlife
+Hawaii,2800,warm,beach hiking surfing
+Switzerland,3800,cold,skiing hiking sightseeing
+France,3200,moderate,sightseeing museums dining
+Thailand,2200,warm,beach nightlife temples
+Japan,4200,moderate,sightseeing temples shopping
+Iceland,4100,cold,sightseeing hiking geysers
+Australia,3900,warm,beach sightseeing surfing
+United States,3600,moderate,sightseeing shopping dining
+Brazil,2900,warm,beach hiking nightlife
+Canada,3400,cold,skiing hiking sightseeing
+Italy,3600,moderate,sightseeing museums dining
+Greece,2600,warm,beach historical sightseeing
+Morocco,2300,warm,desert hiking historical
+South Africa,4300,warm,safari sightseeing hiking
+Norway,4200,cold,skiing fjords hiking
+Spain,3100,moderate,beach sightseeing dining
+Dubai,4300,warm,shopping sightseeing beach
+China,4100,moderate,temples sightseeing shopping
+Mexico,2400,warm,beach nightlife historical
+New Zealand,4100,moderate,hiking sightseeing adventure
+Austria,3600,cold,skiing sightseeing hiking
+Argentina,2700,moderate,sightseeing hiking nightlife
+Vietnam,2000,warm,beach historical cuisine
+Sweden,4200,cold,skiing hiking northern-lights
+India,2200,moderate,temples historical cuisine
+Egypt,2800,warm,desert historical diving
+Portugal,3200,moderate,beach surfing nightlife
+Croatia,3400,warm,beach historical sailing
+Maldives,4400,warm,beach snorkeling diving
+Peru,3000,moderate,hiking historical sightseeing
+Chile,3700,moderate,hiking sightseeing wine-tasting
+Costa Rica,3800,warm,beach hiking rainforest
+Turkey,3200,moderate,beach historical sightseeing
+Malaysia,2400,warm,beach rainforest diving
+Philippines,2600,warm,beach island-hopping diving
+Ireland,3500,cold,sightseeing hiking pubs
+Scotland,3800,cold,sightseeing hiking whiskey-tasting
+Czech Republic,2800,moderate,sightseeing historical beer-tasting
+Hungary,3000,moderate,sightseeing historical thermal-baths
+Netherlands,3700,cold,sightseeing museums cycling
+Belgium,3300,cold,sightseeing beer chocolate
+Jamaica,3800,warm,beach reggae hiking
+Bahamas,4200,warm,beach snorkeling diving
+Nepal,2600,moderate,hiking temples cultural
+Sri Lanka,2400,warm,beach wildlife temples
+Taiwan,3500,moderate,sightseeing temples hiking
+South Korea,3400,moderate,sightseeing temples cuisine
+Hong Kong,4000,moderate,sightseeing shopping nightlife
