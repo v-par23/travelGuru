@@ -15,6 +15,7 @@
  */
 
 public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButton1:397388:
+  //resettiing all of the user states and variables 
   currentUser = null;
   showRecommendations = false;
   showUserRecommendations = false;
@@ -27,6 +28,7 @@ public void backButton_click1(GButton source, GEvent event) { //_CODE_:backButto
 } //_CODE_:backButton1:397388:
 
 public void button2_click1(GButton source, GEvent event) { //_CODE_:backButton2:968307:
+    //shows the questions and resets them
     if (showRecommendations) {
     showRecommendations = false;
     resetQuestions();
@@ -36,6 +38,7 @@ public void button2_click1(GButton source, GEvent event) { //_CODE_:backButton2:
 } //_CODE_:backButton2:968307:
 
 public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:358523:
+  //gets the number of destinations to recommend based on the slider value
   numDest = slider1.getValueF();
 } //_CODE_:slider1:358523:
 
@@ -66,4 +69,3 @@ public void createGUI(){
 GButton backButton1; 
 GButton backButton2; 
 GSlider slider1; 
- 
