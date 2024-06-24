@@ -329,20 +329,48 @@ void keyPressed() {
 }
 
 void handleQuestionInput() {
-  String validationMessage = "";
+  //String validationMessage = "";
 
-  if (keyCode == ENTER) {
-    if (currentQuestion == 0 && !isValidDuration(userInputs[currentQuestion])) {
-      validationMessage = "Invalid duration. Please enter a valid number of days (1-365).";
-    } else if (currentQuestion == 1 && !isValidBudget(userInputs[currentQuestion])) {
-      validationMessage = "Invalid budget. Please enter a valid budget.";
-    } else if (currentQuestion == 2 && !isValidClimate(userInputs[currentQuestion])) {
-      validationMessage = "Invalid climate. Please enter 'warm', 'cold', or 'moderate'.";
-    } else if (currentQuestion == 3 && !isValidActivities()) {
-      validationMessage = "Invalid activities. Please enter valid activities separated by commas.";
-    } else {
-      currentQuestion++;
+  //if (keyCode == ENTER) {
+  //  if (userInputs[currentQuestion] == null || userInputs[currentQuestion].trim().isEmpty()) {
+  //    return;  // Do not advance if the current input is empty
+  //  }
+    
+  //  if (currentQuestion == 0 && !isValidDuration(userInputs[currentQuestion])) {
+  //    validationMessage = "Invalid duration. Please enter a valid number of days (1-365).";
+  //  } else if (currentQuestion == 1 && !isValidBudget(userInputs[currentQuestion])) {
+  //    validationMessage = "Invalid budget. Please enter a valid budget.";
+  //  } else if (currentQuestion == 2 && !isValidClimate(userInputs[currentQuestion])) {
+  //    validationMessage = "Invalid climate. Please enter 'warm', 'cold', or 'moderate'.";
+  //  } else if (currentQuestion == 3 && !isValidActivities()) {
+  //    validationMessage = "Invalid activities. Please enter valid activities separated by commas.";
+  //  } else {
+  //    currentQuestion++;
+  //  }
+  
+    if (keyCode == ENTER) {
+    // Check if the current question has an input
+    if (userInputs[currentQuestion] == null || userInputs[currentQuestion].trim().isEmpty()) {
+      return;  // Do not advance if the current input is empty
     }
+
+    // Validate the input based on the current question
+    if (currentQuestion == 0 && !isValidDuration(userInputs[currentQuestion])) {
+      println("Invalid duration. Please enter a valid number of days (1-365).");
+      return;
+    } else if (currentQuestion == 1 && !isValidBudget(userInputs[currentQuestion])) {
+      println("Invalid budget. Please enter a valid budget.");
+      return;
+    } else if (currentQuestion == 2 && !isValidClimate(userInputs[currentQuestion])) {
+      println("Invalid climate. Please enter 'warm', 'cold', or 'moderate'.");
+      return;
+    } else if (currentQuestion == 3 && !isValidActivities()) {
+      println("Invalid activities. Please enter valid activities separated by commas.");
+      return;
+    }
+
+    // Advance to the next question
+    currentQuestion++;
 
     if (currentQuestion >= questions.length) {
       recommendDestination();
@@ -434,6 +462,9 @@ void loginUser(String username, String password) {
       currentUser = user;
       registrationMessage = "";
       println("Login successful for user: " + username);
+      currentQuestion = 0;  // Reset currentQuestion after successful login
+      showRecommendations = false;  // Reset showRecommendations flag
+      Arrays.fill(userInputs, null);  // Clear previous user inputs
     } else {
       registrationMessage = "Incorrect password.";
       println("Incorrect password for user: " + username);
